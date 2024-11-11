@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Smart Chronic Disease Management Platform</title>
+  <title>Advanced Chronic Disease Management Platform</title>
   <style>
     /* Basic Reset */
     * {
@@ -13,12 +13,12 @@
     }
     body {
       font-family: Arial, sans-serif;
-      color: #333;
       display: flex;
       height: 100vh;
       background-color: #f4f6f9;
+      color: #333;
     }
-    /* Sidebar Navigation */
+    /* Sidebar */
     .sidebar {
       width: 20%;
       background-color: #2a3d66;
@@ -52,41 +52,63 @@
       background: #fff;
       border-radius: 8px;
       padding: 15px;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     }
     h3 {
-      margin-bottom: 10px;
       color: #2a3d66;
     }
-    /* Overview Cards */
-    .cards {
+    /* Care Plan & Goal Tracking */
+    .care-plan {
       display: flex;
-      gap: 15px;
+      gap: 10px;
+      flex-wrap: wrap;
     }
-    .card {
-      flex: 1;
+    .goal {
+      width: 48%;
       padding: 10px;
       background-color: #e8f0ff;
       border-radius: 8px;
-      text-align: center;
-    }
-    /* Graph/Chart Placeholder */
-    .chart {
-      height: 200px;
-      background-color: #e6e6e6;
       display: flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: 8px;
-      color: #777;
+      flex-direction: column;
+      gap: 5px;
     }
-    /* Alerts and Notifications */
-    .alert {
-      padding: 10px;
-      color: #fff;
-      background-color: #ff6b6b;
+    .progress-bar {
+      height: 10px;
+      background-color: #ccc;
       border-radius: 5px;
-      margin-top: 10px;
+      overflow: hidden;
+    }
+    .progress-fill {
+      height: 100%;
+      background-color: #2a3d66;
+      width: 50%;
+    }
+    /* Telehealth Scheduler */
+    .scheduler {
+      display: flex;
+      gap: 10px;
+      flex-direction: column;
+      background-color: #e6f7ff;
+      padding: 10px;
+      border-radius: 8px;
+    }
+    /* Risk Dashboard */
+    .risk {
+      padding: 10px;
+      background-color: #ffdfdf;
+      color: #721c24;
+      border-left: 5px solid #f5c6cb;
+      border-radius: 5px;
+    }
+    /* Interactive Patient Education */
+    .education {
+      background: #fff3cd;
+      padding: 10px;
+      border-radius: 8px;
+      color: #856404;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
     }
     /* Buttons */
     .button {
@@ -108,73 +130,75 @@
   <div class="sidebar">
     <h2>Dashboard</h2>
     <a href="#dashboard">Overview</a>
-    <a href="#health-monitoring">Health Monitoring</a>
     <a href="#care-plan">Personalized Care Plan</a>
-    <a href="#communication">Communication</a>
-    <a href="#appointments">Appointments</a>
-    <a href="#education">Education & Resources</a>
+    <a href="#monitoring">Remote Monitoring</a>
+    <a href="#telehealth">Telehealth</a>
+    <a href="#education">Patient Education</a>
+    <a href="#risk">Risk & Insights</a>
   </div>
 
   <div class="main-content">
 
     <!-- Dashboard Section -->
     <div class="section" id="dashboard">
-      <h3>Dashboard</h3>
-      <div class="cards">
-        <div class="card">Recent Vitals</div>
-        <div class="card">Medication Adherence</div>
-        <div class="card">Upcoming Appointments</div>
-        <div class="card">Wellness Score</div>
-      </div>
-      <div class="chart">Visual Health Summary Chart</div>
-    </div>
-
-    <!-- Health Monitoring Section -->
-    <div class="section" id="health-monitoring">
-      <h3>Health Monitoring</h3>
-      <div class="chart">Real-Time Data Feed</div>
-      <div class="chart">Historical Data Graph</div>
-      <div class="alert">Alert: Abnormal Reading Detected!</div>
+      <h3>Dashboard Overview</h3>
+      <p>Quick summary of key health metrics and reminders.</p>
     </div>
 
     <!-- Care Plan Section -->
     <div class="section" id="care-plan">
       <h3>Personalized Care Plan</h3>
-      <ul>
-        <li>Daily Action Items</li>
-        <li>Weekly Goals</li>
-        <li><button class="button">Set Reminders</button></li>
-      </ul>
+      <div class="care-plan">
+        <div class="goal">
+          <p>Medication Adherence</p>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 80%;"></div>
+          </div>
+        </div>
+        <div class="goal">
+          <p>Exercise Goal</p>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 65%;"></div>
+          </div>
+        </div>
+        <button class="button">Set New Goal</button>
+      </div>
     </div>
 
-    <!-- Communication Section -->
-    <div class="section" id="communication">
-      <h3>Communication Portal</h3>
-      <button class="button">Chat with Provider</button>
-      <button class="button">Join Video Call</button>
-      <p>FAQs & Resources</p>
+    <!-- Monitoring Section -->
+    <div class="section" id="monitoring">
+      <h3>Remote Patient Monitoring</h3>
+      <div class="chart">Live Vital Signs Monitoring (Data Placeholder)</div>
     </div>
 
-    <!-- Appointments Section -->
-    <div class="section" id="appointments">
-      <h3>Appointments</h3>
-      <ul>
-        <li>Upcoming Appointments</li>
-        <li>Past Appointments</li>
-        <li>Follow-Up Checklist</li>
-      </ul>
+    <!-- Telehealth Section -->
+    <div class="section" id="telehealth">
+      <h3>Telehealth Appointments</h3>
+      <div class="scheduler">
+        <p>Next Appointment: <strong>Dec 20, 2023</strong></p>
+        <button class="button">Schedule New Appointment</button>
+      </div>
     </div>
 
-    <!-- Education & Resources Section -->
+    <!-- Patient Education Section -->
     <div class="section" id="education">
-      <h3>Patient Education & Resources</h3>
-      <ul>
-        <li>Educational Materials</li>
-        <li>Tips & Recommendations</li>
-      </ul>
+      <h3>Patient Education & Self-Management</h3>
+      <div class="education">
+        <p>Learn more about managing your condition through interactive guides, videos, and quizzes.</p>
+        <button class="button">Explore Resources</button>
+      </div>
+    </div>
+
+    <!-- Risk and Insights Section -->
+    <div class="section" id="risk">
+      <h3>Predictive Health Insights</h3>
+      <div class="risk">
+        <p>Alert: High risk of potential health deterioration. Please review care plan and follow up with your provider.</p>
+      </div>
     </div>
 
   </div>
 
 </body>
 </html>
+
